@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'MiFuente';
+  src: url('/assets/fonts/Anton-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.mi-clase {
+  font-family: 'MiFuente', sans-serif;
+  letter-spacing: 1px; /* Ajusta según lo necesites */
+}
+

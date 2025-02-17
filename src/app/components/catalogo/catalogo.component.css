@@ -1,0 +1,8 @@
+.list-group-item {
+  cursor: pointer; /* Hace que el cursor sea una mano */
+}
+
+.list-group-item.active {
+  background-color: #8b55ff;
+  border-color: #242526;
+}

@@ -1,0 +1,70 @@
+<div class="container">
+  <br />
+  <div class="row">
+    <!-- Filtro de Categorías -->
+    <div class="col-md-2">
+      <h5>Categorías</h5>
+      <ul class="list-group">
+        <li class="list-group-item"
+            [class.active]="categoriaSeleccionada === ''"
+            (click)="filtrarPorCategoria('')">
+          TODOS
+        </li>
+        <li *ngFor="let categoria of categorias"
+            class="list-group-item"
+            [class.active]="categoriaSeleccionada === categoria"
+            (click)="filtrarPorCategoria(categoria)">
+          {{ categoria }}
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-10">
+
+      <div class="container">
+        <br />
+        <!-- Buscador -->
+        <input type="text" [(ngModel)]="searchText" (input)="filtrarProductos()" class="form-control mb-3" placeholder="Buscar producto...">
+
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <!-- Verifica si los productos están cargados -->
+          <ng-container *ngIf="productosFiltrados.length > 0; else loading">
+            <div *ngFor="let itemproducto of productosFiltrados | paginate: { itemsPerPage: pageSize, currentPage: page }" class="col">
+              <a [routerLink]="['/producto', itemproducto.id]" class="text-decoration-none">
+                <div class="card">
+                  <img [src]="'assets/' + itemproducto.imagen" class="card-img-top img-fluid rounded p-4" alt="{{ itemproducto.nombre }}" />
+                  <br>
+                  <div class="card-body text-center">
+                    <h6 class="card-title">{{ itemproducto.nombre }}</h6>
+                    <p>
+                      Precio <span class="badge bg-success">S/. {{ itemproducto.precio | number: '1.2-2' }}</span>
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </ng-container>
+
+          <!-- Plantilla de carga mientras se obtienen los productos -->
+          <ng-template #loading>
+            <p>Cargando productos...</p>
+          </ng-template>
+        </div>
+        <br>
+        <div class="text-center">
+          <!-- Paginación -->
+          <pagination-controls
+            (pageChange)="page = $event"
+            previousLabel="Anterior"
+            nextLabel="Siguiente">
+          </pagination-controls>
+        </div>
+
+      </div>
+      <br><br><br><br>
+    </div>
+
+  </div>
+
+
+</div>

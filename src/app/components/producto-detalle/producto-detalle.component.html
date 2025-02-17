@@ -1,0 +1,67 @@
+<div class="container" *ngIf="producto; else notFound">
+  <div class="row">
+    <hr>
+    <div class="col-md-6 p-4">
+      <img [src]="'assets/' + producto.imagen" class="img-fluid rounded" alt="{{ producto.nombre }}">
+    </div>
+    <div class="col-md-6 p-4">
+
+       <h5 class=""> {{ producto.nombre }}</h5>
+       <p class="" >
+        {{producto.descripcion}}
+       </p>
+       <span class="badge bg-success">Precio:  S/. {{ producto.precio | number: '1.2-2' }}</span>
+
+      <br><br>
+      <h6> <strong> Descripción </strong> </h6>
+      <hr>
+      <p>○ <strong> Categoría:  </strong>{{producto.categoria}}</p>
+      <p>○ <strong> Tamaño:  </strong> {{producto.tamano}} </p>
+      <p>
+        ○ Tomar bebidas alcohólicas en exceso es dañino. Prohibida la venta de bebidas alcohólicas a menores de 18 años. Si has ingerido bebidas alcohólicas, no manejes.
+      </p>
+      <p>
+        ○ Prohibida la venta de bebidas alcohólicas a menores de 18 años
+      </p>
+    </div>
+
+  </div>
+  <!-- Mostrar comentarios -->
+  <div class="row">
+    <div class="col-12">
+      <h6><strong> 🗨️ Comentarios  </strong></h6>
+      <hr>
+      <div *ngFor="let com of comentarios">
+        <p>{{ com.texto }}
+          <span class="stars-align">{{ getEstrellas(com.classification) }} <strong> {{ com.classification }}</strong></span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Registrar comentario -->
+  <div class="row">
+    <div class="col-10">
+      <!-- Campo para escribir un nuevo comentario -->
+      <div class="form-group">
+        <textarea [(ngModel)]="comentario" class="form-control" placeholder="Escribe tu comentario..." rows="3"></textarea>
+      </div>
+    </div>
+    <div class="col-2">
+      <button (click)="agregarComentario()" class="btn btn-primary mt-2" [disabled]="loading || comentario.trim() === ''">
+        {{ loading ? 'Enviando...' : ' 👉 Comentar' }}
+      </button>
+    </div>
+  </div>
+  <br><br><br><br>
+</div>
+
+
+<!-- Mensaje si el producto no existe -->
+<ng-template #notFound>
+  <div class="alert alert-danger text-center">
+    <p>Producto no encontrado.</p>
+    <a routerLink="/" class="btn btn-primary">Volver al catálogo</a>
+  </div>
+</ng-template>
+
