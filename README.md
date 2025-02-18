@@ -5,6 +5,10 @@
 
 En este proyecto se simula un **sitio web de licorería** con la implementación de un **modelo de IA** para clasificar comentarios de productos en **tiempo real**.  
 
+🔗 **Visita el sitio web aquí:**  
+
+[![Website](https://img.shields.io/badge/🌐%20Sitio%20Web-ElBarDelTiempo-blue?style=for-the-badge)](https://elbardeltiempo.web.app/)  
+
 ## 🚀 Tecnologías Usadas
 
 🔹 Frontend: Angular 19.0.1
