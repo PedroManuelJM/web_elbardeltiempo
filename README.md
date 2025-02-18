@@ -9,7 +9,9 @@ En este proyecto se simula un **sitio web de licorería** con la implementación
 
 🔹 Frontend: Angular 19.0.1
 
-🔹 Backend:  Firebase, Huggingface (Modelo propio)
+🔹 Backend: Huggingface (Modelo propio)
+
+🔹 Hosting: Firebase
 
 🔹 IA: Modelo de clasificación de comentarios (BERT)
 
