@@ -7,3 +7,15 @@
   bottom: 0;
   width: 100%;
 }
+
+.nombre-destacado {
+  color: gold; /* Texto dorado */
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow:
+    -3px -3px 0 black,
+     3px -3px 0 black,
+    -3px  3px 0 black,
+     3px  3px 0 black;
+     letter-spacing: 4px;
+}
