@@ -3,7 +3,7 @@
 ![GitHub](https://img.shields.io/github/license/user/AppCatalogo?style=for-the-badge)  
 ![GitHub last commit](https://img.shields.io/github/last-commit/user/AppCatalogo?style=for-the-badge)  
 
-En este proyecto se simula un **sitio web de licorería** con la implementación de un **modelo de IA** para clasificar comentarios de productos en **tiempo real**.  
+En este proyecto de un **sitio web de licorería** con la implementación de un **modelo de IA** para clasificar comentarios de productos en **tiempo real**.  
 
 🔗 **Visita el sitio web aquí:**  
 
